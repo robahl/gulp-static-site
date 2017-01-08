@@ -1,0 +1,23 @@
+{
+  "name": "gulp-pug-stylus",
+  "version": "1.0.0",
+  "description": "Robs Skeleton - A skeleton for Gulp with LiveReload.",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Ahlberg",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-stylus": "^2.5.0",
+    "jeet": "^7.1.0",
+    "rupture": "^0.6.1"
+  }
+}
