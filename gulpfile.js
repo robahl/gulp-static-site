@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     pug = require('gulp-pug'),
     stylus = require('gulp-stylus'),
+    babel = require('gulp-babel'),
     autoprefixer = require('gulp-autoprefixer'),
     jeet = require('jeet'),
     rupture = require('rupture');
@@ -30,6 +31,16 @@ gulp.task('pug', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('babel', function() {
+  return gulp.src('src/javascript/**/*.js')
+    .pipe(plumber())
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(gulp.dest('public/javascript'))
+    .pipe(connect.reload());
+});
+
 gulp.task('connect', function() {
   connect.server({
     root: ['public'],
@@ -40,6 +51,7 @@ gulp.task('connect', function() {
 gulp.task('watch', function() {
   gulp.watch(['src/styl/**/*.styl'], ['stylus']);
   gulp.watch(['src/views/**/*.pug'], ['pug']);
+  gulp.watch(['src/javascript/**/*.js'], ['babel']);
 });
 
-gulp.task('default', ['stylus', 'pug', 'connect', 'watch']);
+gulp.task('default', ['stylus', 'pug', 'babel', 'connect', 'watch']);

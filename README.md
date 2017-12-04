@@ -1,1 +1,1 @@
-# Gulp Skeleton with Pug and Stylus
+# Gulp builder for Pug, Stylus and Babel
