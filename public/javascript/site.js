@@ -1,1 +1,3 @@
-// site.js
+'use strict';
+
+var variable = 'variable';
