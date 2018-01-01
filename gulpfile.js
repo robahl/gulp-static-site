@@ -37,7 +37,7 @@ gulp.task('babel', function() {
     .pipe(babel({
       presets: ['env']
     }))
-    .pipe(gulp.dest('public/javascript'))
+    .pipe(gulp.dest('public/js'))
     .pipe(connect.reload());
 });
 
